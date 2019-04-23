@@ -1,0 +1,52 @@
+{
+  "name": "mapa",
+  "plural": "mapas",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "schema": "monitoreo",
+      "table":"hist_observacion_geotecnico"
+    }
+  },
+  "properties": {
+  },
+  "hidden": [],
+  "protected": [],
+  "validations": [],
+  "relations": {
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property":[
+        "ambiental",
+        "geotecnico",
+        "param",
+        "incidente",
+        "capacitacion"
+      ]
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property":[
+        "foto"
+      ]
+    }
+  ],
+  "methods": {},
+  "scope": {
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "postgres": {
+    "host": "74.208.160.179",
+    "port": 5432,
+    "url": "",
+    "database": "pmac",
+    "password": "Pg_pm4c",
+    "name": "postgresql",
+    "user": "postgres",
+    "connector": "postgresql"
+  }
+}
+
+

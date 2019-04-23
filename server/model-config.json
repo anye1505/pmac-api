@@ -1,0 +1,103 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "acl": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "user": {
+    "dataSource": "postgres",
+    "public": true,
+    "options": {
+      "realmRequired": true,
+      "realmDelimiter": ":",
+      "remoting": {
+        "sharedMethods": {
+          "count":true,
+          "login": true,
+          "logout": true,
+          "create":true,
+          "find":true,
+          "findById":true,
+          "resetPassword":true,
+          "exists":true,
+          "prototype.patchAttributes":true
+        }
+      }
+    }
+  },
+  "accessToken": {
+    "dataSource": "postgres",
+    "public": false
+  },
+  "role": {
+    "dataSource": "postgres",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "find": true
+        }
+      }
+    }
+  },
+  "roleMapping": {
+    "dataSource": "postgres",
+    "public": true,
+    "options": {
+      "remoting": {
+          "sharedMethods": {
+            "create":true,
+            "deleteById":true,
+            "find": true
+          }
+        }
+      }
+  },
+
+  "mapa": {
+    "dataSource": "postgres",
+    "public": true,
+    "options": {
+      "remoting": {
+          "sharedMethods": {
+            "ambiental":true,
+            "geotecnico":true,
+            "param":true,
+            "foto":true,
+            "incidente":true,
+            "capacitacion":true
+          }
+        }
+      }
+  },
+
+  "indicador": {
+    "dataSource": "postgres",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "param":true,
+          "consulta":true,
+          "controlAcceso":true,
+          "gestionSocial":true
+        }
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,43 @@
+{
+  "name": "indicador",
+  "plural": "indicadores",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "schema": "monitoreo",
+      "table":"hist_observacion_geotecnico"
+    }
+  },
+  "properties": {
+  },
+  "hidden": [],
+  "protected": [],
+  "validations": [],
+  "relations": {
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property":[
+        "param",
+        "consulta",
+        "controlAcceso",
+        "gestionSocial"
+      ]
+    }
+  ],
+  "methods": {},
+  "scope": {
+  }
+}
